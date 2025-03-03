@@ -27,7 +27,7 @@ color = st.selectbox("Color", options=[
 ])
 
 if st.button("Predict Price"):
-        input_data = {
+    input_data = {
         "Levy": levy,
         "Engine_volume": engine_volume,
         "Mileage": mileage,
@@ -45,12 +45,10 @@ if st.button("Predict Price"):
     }
     
     try:
-        
         car_features = CarFeatures(**input_data)
     except ValidationError as e:
         st.error("Validation Error: " + str(e))
     else:
-        
         api_url = "https://edhec-car-price-prediction.onrender.com/predict"
         try:
             response = requests.post(api_url, json=input_data)
