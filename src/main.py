@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from CarFeatures import CarFeatures
+from src.CarFeatures import CarFeatures
 import pandas as pd
 import numpy as np
 import pickle
